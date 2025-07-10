@@ -2,45 +2,113 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <title>10-7-2024</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Playwrite+IN:wght@100..400&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="eiei.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <title>Memory</title>
+
+    <style>
+        @font-face {
+            font-family: 'FC-Minimal';
+            src: url('fonts/FC-Minimal/FC Minimal Regular.ttf') format('truetype');
+        }
+
+        body {
+            background: lavenderblush;
+            font-family: 'FC-Minimal';
+        }
+
+        .card-img-top {
+            margin: 25px auto;
+            width: 75%;
+        }
+    </style>
+
+
+
 </head>
 
 <body>
-  <div class="envlope-wrapper">
-    <div id="envelope" class="close">
-      <div class="front flap"></div>
-      <div class="front pocket"></div>
-      <div class="letter">
-        <div class="words line1">To: P'Oak</div>
-        
-        <div class="words line2">I love you because you made my life better.</div>
-        <div class="words line3">I love you because you make me feel special.</div>
-        <div class="words line4">I love you becuase you like even my flaws.</div>
-        <div class="words line5">I love you because now with you </div>
-        <div class="words line6">i can belive in everything.</div>
-        <div class="words line7">That Previously seemed impossible.</div>
-      </div>
-      <div class="hearts">
-        <div class="heart a1"></div>
-        <div class="heart a2"></div>
-        <div class="heart a3"></div>
-      </div>
-    </div>
-  </div>
-  <div class="reset">
-    <button id="open">Open</button>
-    <button id="reset">Close</button>
-  </div>
+    <!-- tab-conten -->
+    <!-- แถว 1 -->
+    <div class="container mt-5">
+        <div class="row row-cols-2 row-cols-md-4 g-4 mt-5">
+            <!-- 1 card -->
+            <div class="col">
+                <div class="card h-100 shadow">
+                    <a href="letter.html" style="text-decoration: none; color: darkslategray;">
+                        <img src="https://cdn.discordapp.com/attachments/932242783153033247/1392735263658082484/image.jpg?ex=68709d4a&is=686f4bca&hm=e18f3c916e14797231f04d969a8ea95429fe85b4e2ff5a8396b80e020ccb0b50&"
+                            class="card-img-top mx-auto d-block" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">LETTER</h5>
+                        </div>
+                    </a>
+                </div>
+            </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="eiei.js"></script>
+            <!-- 2 card -->
+            <div class="col">
+                <div class="card h-100 shadow">
+                    <a style="text-decoration: none; color: darkslategray;" data-bs-toggle="modal" data-bs-target="#videoModal" style="cursor: pointer;" >
+                        <img src="https://media.discordapp.net/attachments/932242783153033247/1392719769253314628/cpm35_2567-12-30_155804.758.jpg?ex=68708edc&is=686f3d5c&hm=b36f8e4effac130cb8426b39ae88a544cb26da2ffafc359406480caea781e39c&=&format=webp&width=533&height=800"
+                            class="card-img-top mx-auto d-block" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title text-center" >?_?</h5>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 3 card -->
+            <div class="col">
+                <div class="card h-100 shadow">
+                    <a href="#" style="text-decoration: none; color: darkslategray;">
+                        <img src="https://cdn.discordapp.com/attachments/932242783153033247/1392735654248579114/original_2567-09-26_150128.431.jpg?ex=68709da7&is=686f4c27&hm=92398d3cfab240d24c47bab660390a525647af69411a4e972b5c0dd43e656fd1&"
+                            class="card-img-top mx-auto d-block" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Card title</h5>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 4 card -->
+            <div class="col">
+                <div class="card h-100 shadow">
+                    <a href="#" style="text-decoration: none; color: darkslategray;">
+                        <img src="https://cdn.discordapp.com/attachments/932242783153033247/1392736299680792638/IMG_4109.jpg?ex=68709e41&is=686f4cc1&hm=4a743d475c7cb34f7fb8718c5ebeea6d360192fb7c40cada756be0e1dc18cc8a&"
+                            class="card-img-top mx-auto d-block" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Card title</h5>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ✅ Modal ที่ซ่อนอยู่ -->
+    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="videoModalLabel">Capture 1</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="capture1.mp4" title="YouTube video"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

@@ -294,9 +294,9 @@ body {
   transition: all 0.1s linear;
   -webkit-appearance: none;
   background-color: transparent;
-  border: solid 2px #d9534f;
+  border: solid 2px #fcadaa;
   border-radius: 4px;
-  color: #d9534f;
+  color: #d79d9c;
   display: inline-block;
   font-size: 35px;
   text-transform: uppercase;
@@ -308,8 +308,33 @@ body {
   cursor: pointer;
 }
 
+.back {
+  font-weight: 800;
+  font-style: normal;
+  transition: all 0.1s linear;
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: solid 2px #fcadaa;
+  border-radius: 4px;
+  color: #d79d9c;
+  display: inline-block;
+  font-size: 35px;
+  text-transform: uppercase;
+  margin: 5px;
+  padding: 15px 30px;
+  line-height: 1em;
+  text-decoration: none;
+  min-width: 160px;
+  cursor: pointer;
+}
+
+.back:hover {
+  background-color: #eaa5a5;
+  color: #fff;
+}
+
 .reset button:hover {
-  background-color: #d9534f;
+  background-color: #eaa5a5;
   color: #fff;
 }
 @media (max-width: 480px) {
