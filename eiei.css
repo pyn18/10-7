@@ -32,10 +32,8 @@
 
 .pocket {
   border-left: 310px solid #ececec;
-  /* Soft pinkish red for the pocket */
   border-right: 310px solid #ececec;
   border-bottom: 200px solid #d1d1d1;
-  /* Lighter romantic red */
   border-top: 220px solid transparent;
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
@@ -44,14 +42,16 @@
 .letter {
   position: relative;
   background-color: #fff;
-  width: 90%;
+  width: 95%;
   margin-left: auto;
   margin-right: auto;
-  height: 90%;
+  padding: 30px 20px;
+  height: auto;
   top: 2%;
   border-radius: 6px;
   box-shadow: 0 2px 26px rgba(0, 0, 0, 0.12);
-  font-family: "Dancing Script", cursive;
+  font-family: "Josefin Sans", sans-serif;
+  box-sizing: border-box;
 }
 
 .letter:after {
@@ -64,12 +64,16 @@
 }
 
 .words {
-  position: absolute;
-  left: 10%;
-  width: 80%;
-  height: 14%;
+  display: block;
+  width: fit-content;
+  max-width: 95%;
+  margin: 10px auto;
   background-color: #ffe6e6;
-  /* Light romantic tone */
+  padding: 5px 15px;
+  border-radius: 4px;
+  text-align: left;
+  word-break: break-word;
+  font-size: 1.3rem;
 }
 
 .words.line1 {
@@ -77,48 +81,45 @@
   font-size: 1.5rem;
   width: 20%;
   height: 7%;
+  margin: 10px 0;
 }
 
 .words.line2 {
   top: 30%;
-  text-align: center;
   font-size: 1.5rem;
+  margin: 10px auto;
 }
 
 .words.line3 {
   top: 50%;
   font-size: 1.5rem;
-  text-align: center;
+  margin: 10px auto;
+
 }
 
 .words.line4 {
   top: 70%;
   font-size: 1.5rem;
-  text-align: center;
+  margin: 10px auto;
+
 }
 
 .words.line5 {
   top: 85%;
   font-size: 1.4rem;
-  text-align: center;
+  margin: 10px auto;
 }
 
 .words.line6 {
   top: 105%;
   font-size: 1.4rem;
-  text-align: center;
+  margin: 10px auto;
 }
 
 .words.line7 {
   top: 125%;
   font-size: 1.4rem;
-  text-align: center;
-}
-
-.words.line8 {
-  top: 145%;
-  font-size: 1.4rem;
-  text-align: center;
+  margin: 10px auto;
 }
 
 .open .flap {
