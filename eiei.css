@@ -1,43 +1,14 @@
-/* --- CSS VARIABLES --- */
-/* ใช้ตัวแปรเพื่อควบคุมขนาด ทำให้แก้ทีเดียวเปลี่ยนทั้งหมดได้ง่าย */
-:root {
-  --envelope-width: 450px;
-  --envelope-height: 300px;
-  --letter-width: 380px;
-  --letter-height: 280px;
-  --letter-transform-y: -200px;
-}
-
-/* --- GENERAL & CENTERING --- */
-body {
-  background-color: #f0e6f6;
-  margin: 0; /* ลบ margin ที่ browser ใส่มาให้ */
-  font-family: "Dancing Script", cursive, sans-serif; /* เพิ่ม fontสำรอง */
-  display: flex; /* Use flexbox for overall layout */
-  flex-direction: column; /* Stack items vertically */
-  min-height: 100vh; /* Ensure body takes full viewport height */
-}
-
-/* แก้ไข wrapper ให้ทำหน้าที่จัดกลางอย่างเดียว */
-.envlope-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1; /* Allow the wrapper to grow and take available space */
-  padding: 20px 0; /* Add some vertical padding for smaller screens */
-}
-
-/* --- ENVELOPE --- */
 #envelope {
   position: relative;
-  width: var(--envelope-width);
-  height: var(--envelope-height);
-  max-width: 90vw; /* ทำให้ไม่ล้นจอแนวนอน */
-  /* Remove max-height, let it adjust based on aspect ratio or content */
+  width: 620px;
+  height: 420px;
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
-  background-color: #ffffff;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #b8b8b8;
+  /* Warm romantic red */
+  box-shadow: 0 4px 20px rgba(144, 144, 144, 0.2);
 }
 
 .front {
@@ -48,67 +19,85 @@ body {
 }
 
 .flap {
-  border-left: calc(var(--envelope-width) / 2) solid transparent;
-  border-right: calc(var(--envelope-width) / 2) solid transparent;
-  border-bottom: 100px solid transparent; /* Keep this fixed or adjust with calc if needed */
-  border-top: calc(var(--envelope-height) / 2) solid #b7b7b7;
+  border-left: 310px solid transparent;
+  border-right: 310px solid transparent;
+  border-bottom: 250px solid transparent;
+  /* a little smaller */
+  border-top: 210px solid #b8b8b8;
+  /* Same romantic red */
+  /* a little larger */
   transform-origin: top;
   pointer-events: none;
 }
 
 .pocket {
-  border-left: calc(var(--envelope-width) / 2) solid #e9e9e9;
-  border-right: calc(var(--envelope-width) / 2) solid #e9e9e9;
-  border-bottom: calc(var(--envelope-height) / 2) solid #e2e2e2;
-  border-top: calc(var(--envelope-height) / 2) solid transparent;
+  border-left: 310px solid #ececec;
+  /* Soft pinkish red for the pocket */
+  border-right: 310px solid #ececec;
+  border-bottom: 200px solid #d1d1d1;
+  /* Lighter romantic red */
+  border-top: 220px solid transparent;
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
-  position: absolute;
 }
 
-/* --- LETTER --- */
 .letter {
-  position: absolute;
-  top: 0;
-  width: var(--letter-width);
-  height: var(--letter-height);
-  max-width: 85%; /* ทำให้จดหมายไม่ใหญ่กว่าซอง */
+  position: relative;
   background-color: #fff;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 90%;
+  top: 5%;
   border-radius: 6px;
   box-shadow: 0 2px 26px rgba(0, 0, 0, 0.12);
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 15px; /* Add some padding inside the letter for better spacing */
-  box-sizing: border-box; /* Include padding in the width/height */
-  display: flex; /* Use flexbox for letter content */
-  flex-direction: column; /* Stack words vertically */
-  justify-content: space-around; /* Distribute words evenly */
-  align-items: center; /* Center words horizontally */
-  text-align: center; /* Ensure text alignment */
+  font-family: "Dancing Script", cursive;
+}
+
+.letter:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .words {
-  /* Remove absolute positioning from individual words as flexbox handles layout */
-  position: static;
-  left: auto;
-  top: auto;
-  width: 90%; /* Adjust width to fit within the letter with padding */
-  height: auto;
-  padding: 5px;
+  position: absolute;
+  left: 10%;
+  width: 80%;
+  height: 14%;
   background-color: #ffe6e6;
-  font-size: 1rem;
-  margin-bottom: 10px; /* Add some space between lines */
+  /* Light romantic tone */
 }
 
-/* Remove specific top positioning for each line as flexbox handles it */
 .words.line1 {
-  margin-top: 10px; /* Add a bit more margin for the first line */
-}
-.words.line4 {
-  margin-bottom: 0; /* No margin after the last line */
+  top: 10%;
+  font-size: 1.1rem;
+  width: 20%;
+  height: 7%;
+  font-size: 1rem;
 }
 
-/* --- ANIMATIONS --- */
+.words.line2 {
+  top: 30%;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.words.line3 {
+  top: 50%;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.words.line4 {
+  top: 70%;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
 .open .flap {
   transform: rotateX(180deg);
   transition: transform 0.4s ease, z-index 0.6s;
@@ -122,62 +111,32 @@ body {
 }
 
 .close .letter {
-  transform: translateX(-50%) translateY(0px); /* ต้องคง translateX ไว้ */
+  transform: translateY(0px);
   transition: transform 0.4s ease, z-index 1s;
   z-index: 1;
 }
 
 .open .letter {
-  transform: translateX(-50%) translateY(var(--letter-transform-y));
+  transform: translateY(-100px);
   transition: transform 0.4s 0.6s ease, z-index 0.6s;
   z-index: 2;
 }
 
-/* --- BUTTONS & ETC --- */
-.reset {
-  text-align: center;
-  margin-top: 20px;
-  padding-bottom: 20px; /* Add padding to the bottom to ensure buttons are visible */
-}
-
-.reset button {
-  font-weight: 800;
-  transition: all 0.1s linear;
-  -webkit-appearance: none;
-  background-color: transparent;
-  border: solid 2px #d9534f;
-  border-radius: 4px;
-  color: #d9534f;
-  display: inline-block;
-  font-size: 14px;
-  text-transform: uppercase;
-  margin: 5px;
-  padding: 10px;
-  line-height: 1em;
-  text-decoration: none;
-  min-width: 120px;
-  cursor: pointer;
-}
-
-.reset button:hover {
-  background-color: #d9534f;
-  color: #fff;
-}
-
-/* --- ส่วนของ Hearts และ Keyframes (คงเดิม) --- */
 .hearts {
   position: absolute;
-  top: 90px;
+  top: 120px;
   left: 0;
   right: 0;
   z-index: 2;
 }
+
 .heart {
   position: absolute;
   bottom: 0;
   right: 10%;
   pointer-events: none;
 }
+
 .heart:before,
 .heart:after {
   position: absolute;
@@ -187,50 +146,162 @@ body {
   width: 50px;
   height: 80px;
   background: #e60073;
+  /* Deep romantic pink */
   border-radius: 50px 50px 0 0;
   transform: rotate(-45deg);
   transform-origin: 0 100%;
   pointer-events: none;
 }
+
 .heart:after {
   left: 0;
   transform: rotate(45deg);
   transform-origin: 100% 100%;
 }
+
 .close .heart {
   opacity: 0;
   -webkit-animation: none;
   animation: none;
 }
+
+.a1 {
+  left: 20%;
+  transform: scale(0.6);
+  opacity: 1;
+  -webkit-animation: slideUp 4s linear 1, sideSway 2s ease-in-out 4 alternate;
+  -moz-animation: slideUp 4s linear 1, sideSway 2s ease-in-out 4 alternate;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-delay: 0.7s;
+  animation-delay: 0.7s;
+}
+
+.a2 {
+  left: 55%;
+  transform: scale(1);
+  opacity: 1;
+  -webkit-animation: slideUp 5s linear 1, sideSway 4s ease-in-out 2 alternate;
+  -moz-animation: slideUp 5s linear 1, sideSway 4s ease-in-out 2 alternate;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-delay: 0.7s;
+  animation-delay: 0.7s;
+}
+
+.a3 {
+  left: 10%;
+  transform: scale(0.8);
+  opacity: 1;
+  -webkit-animation: slideUp 7s linear 1, sideSway 2s ease-in-out 6 alternate;
+  -moz-animation: slideUp 7s linear 1, sideSway 2s ease-in-out 6 alternate;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-delay: 0.7s;
+  animation-delay: 0.7s;
+}
+
 @-webkit-keyframes slideUp {
   0% {
     top: 0;
   }
+
   100% {
     top: -600px;
   }
 }
+
 @keyframes slideUp {
   0% {
     top: 0;
   }
+
   100% {
     top: -600px;
   }
 }
+
 @-webkit-keyframes sideSway {
   0% {
     margin-left: 0px;
   }
+
   100% {
     margin-left: 50px;
   }
 }
+
 @keyframes sideSway {
   0% {
     margin-left: 0px;
   }
+
   100% {
     margin-left: 50px;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f0e6f6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* สูงเต็มหน้าจอ */
+  box-sizing: border-box;
+}
+
+.envlope-wrapper {
+  height: 380px;
+  margin-bottom: 100px;
+}
+
+.reset {
+  text-align: center;
+
+}
+
+.reset button {
+  font-weight: 800;
+  font-style: normal;
+  transition: all 0.1s linear;
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: solid 2px #d9534f;
+  border-radius: 4px;
+  color: #d9534f;
+  display: inline-block;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin: 5px;
+  padding: 18px 30px;
+  line-height: 1em;
+  text-decoration: none;
+  min-width: 160px;
+  cursor: pointer;
+}
+
+.reset button:hover {
+  background-color: #d9534f;
+  color: #fff;
+}
+@media (max-width: 480px) {
+  #envelope {
+    width: 95vw;
+    height: auto;
+  }
+
+  .flap,
+  .pocket {
+    border-left: 45vw solid transparent;
+    border-right: 45vw solid transparent;
+  }
+
+  .pocket {
+    border-left-color: #ececec;
+    border-right-color: #ececec;
   }
 }
