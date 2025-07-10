@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+    <title>Memory</title>
+
+    <style>
+        @font-face {
+            font-family: 'FC-Minimal';
+            src: url('fonts/FC-Minimal/FC Minimal Regular.ttf') format('truetype');
+        }
+
+        body {
+            background: lavenderblush;
+            font-family: 'FC-Minimal';
+        }
+
+        .timer-box {
+            margin-top: 100px;
+            text-align: center;
+        }
+
+        .time-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: darkslategray;
+        }
+
+        .time-label {
+            font-size: 1.2rem;
+            color: darkslategray;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- tab-conten -->
+    <div class="container timer-box">
+        <h2 class="mb-4" style="color: darkslategray;"> Start 10 July 2024 (●'◡'●)</h2>
+        <div class="row justify-content-center">
+            <div class="col-3">
+                <div class="time-value" id="days">0</div>
+                <div class="time-label">Day</div>
+            </div>
+            <div class="col-3">
+                <div class="time-value" id="hours">0</div>
+                <div class="time-label">Hour</div>
+            </div>
+            <div class="col-3">
+                <div class="time-value" id="minutes">0</div>
+                <div class="time-label">Minutes</div>
+            </div>
+            <div class="col-3">
+                <div class="time-value" id="seconds">0</div>
+                <div class="time-label">Seconds</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- picture -->
+    <div class="container mt-5">
+        <div class="row row-cols-2 row-cols-md-4 g-4 mt-5">
+            <!-- 1 card -->
+            <div class="col">
+                <div class="card h-100 shadow">
+                    <img src="https://cdn.discordapp.com/attachments/932242783153033247/1392766911225270425/IMG_0956.jpg?ex=6870bac3&is=686f6943&hm=82381ad9418f13f7ec4ab45a1ccec992cf5a6ebd54bd1ffe1b77c8b285db8cab&"
+                        class="card-img-top mx-auto d-block" alt="...">
+                </div>
+            </div>
+
+            <!-- 2 card -->
+            <div class="col">
+                <div class="card h-100 shadow">
+                    <img src="https://cdn.discordapp.com/attachments/932242783153033247/1392766912039096362/IMG_2789.jpg?ex=6870bac4&is=686f6944&hm=3fca4c3ffcffe159d66cebad166eedcedaf9c4cf49605c4e3c777f094dec9176&"
+                        class="card-img-top mx-auto d-block" alt="...">
+                </div>
+            </div>
+
+            <!-- 3 card -->
+            <div class="col">
+                <div class="card h-100 shadow">
+                    <img src="https://cdn.discordapp.com/attachments/932242783153033247/1392766910793383967/IMG_7409.jpg?ex=6870bac3&is=686f6943&hm=596ff2232802d8d5df5f36b4f05d73d67fb46ffc66cc4cd8409ea2e27d5155be&"
+                        class="card-img-top mx-auto d-block" alt="...">
+                </div>
+            </div>
+
+            <!-- 4 card -->
+            <div class="col">
+                <div class="card h-100 shadow">
+                    <img src="https://cdn.discordapp.com/attachments/932242783153033247/1392766912445808732/IMG_3457.jpg?ex=6870bac4&is=686f6944&hm=fedbeb4cc5e583ced0d94a29aa73051a3eb296d9836c35bc1cffffb1d4f2638e&"
+                        class="card-img-top mx-auto d-block" alt="...">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const startDate = new Date("2024-07-10T00:00:00");
+
+        function updateTimer() {
+            const now = new Date();
+            const diff = now - startDate;
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / (1000 * 60)) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
+
+            document.getElementById("days").textContent = days;
+            document.getElementById("hours").textContent = hours;
+            document.getElementById("minutes").textContent = minutes;
+            document.getElementById("seconds").textContent = seconds;
+        }
+
+        setInterval(updateTimer, 1000);
+        updateTimer(); // run immediately
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
